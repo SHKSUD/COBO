@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>{{ p.Tool_Name }} | Expert Solution for {{ p.Pain_Point }}</title>
+<meta name="description" content="Detailed review of the {{ p.Tool_Name }}. {{ p.Solution_Value }} with a success rate of {{ p.Success_Rate }}.">
+<script type="application/ld+json">
+{{ schema | safe }}
+</script>
+{% endblock %}
+
+{% block content %}
+<main class="max-w-4xl mx-auto py-12 px-6">
+    <div class="bg-slate-100 p-4 rounded-lg text-xs text-slate-500 mb-8 italic border-l-4 border-[#3751FF]">
+        <strong>Affiliate Disclosure:</strong> As an automation resource, we may earn a commission from qualifying purchases through the links below at no extra cost to you. [cite: 22]
+    </div>
+
+    <article class="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-slate-100">
+        <header class="mb-10">
+            <span class="text-[#3751FF] font-black uppercase tracking-widest text-sm">{{ p.Category }}</span>
+            <h1 class="text-4xl md:text-5xl font-black mt-2 leading-tight text-[#001E00]">{{ p.Tool_Name }}</h1>
+            <p class="text-xl text-slate-600 mt-4 italic">Primary Use: {{ p.Pain_Point }}</p>
+        </header>
+
+        <div class="grid md:grid-cols-2 gap-10 mb-12">
+            <div class="space-y-6">
+                <div class="p-6 bg-[#F8FAFC] rounded-2xl border border-slate-100">
+                    <h3 class="font-black text-xs uppercase text-slate-400 mb-2">The Solution</h3>
+                    <p class="text-lg font-medium">{{ p.Solution_Value }}</p>
+                </div>
+                <div class="flex space-x-4">
+                    <div class="flex-1 p-4 bg-[#9FE87020] rounded-xl border border-[#9FE870]">
+                        <p class="text-[10px] font-black uppercase text-slate-500">Success Rate</p>
+                        <p class="text-2xl font-black text-[#001E00]">{{ p.Success_Rate }}</p>
+                    </div>
+                    <div class="flex-1 p-4 bg-white rounded-xl border border-slate-200">
+                        <p class="text-[10px] font-black uppercase text-slate-500">Monthly Est.</p>
+                        <p class="text-2xl font-black text-[#3751FF]">{{ p.Monthly_Cost }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-[#001E00] p-8 rounded-2xl text-white flex flex-col justify-center">
+                <h3 class="text-[#9FE870] font-black text-xs uppercase mb-4 tracking-widest">Expert Verdict</h3>
+                <p class="text-sm leading-relaxed mb-6">"{{ p.Expert_Note }}"</p>
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full bg-[#3751FF] flex items-center justify-center font-bold text-xs">AR</div>
+                    <div>
+                        <p class="text-xs font-bold">{{ author }}</p>
+                        <p class="text-[10px] text-slate-400">Verified Robotics Architect</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <a href="{{ p.Affiliate_Link }}" class="inline-block w-full md:w-auto bg-[#3751FF] text-white text-xl font-black py-5 px-12 rounded-2xl hover:scale-[1.02] transition-transform shadow-lg shadow-blue-200">
+                Deploy This Solution Now &rarr;
+            </a>
+            <p class="text-[10px] text-slate-400 mt-4 uppercase font-bold tracking-tighter italic">Secured & Vetted by CobotTooling Lab</p>
+        </div>
+    </article>
+</main>
+{% endblock %}
