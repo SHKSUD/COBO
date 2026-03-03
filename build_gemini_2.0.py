@@ -56,7 +56,7 @@ def build_site():
         tools=df.to_dict(orient='records'),
         author=AUTHOR_NAME
     )
-    with open(f"{OUTPUT_DIR}/guide-cobot-end-effectors.html", 'w', encoding='utf-8') as f:
+    with open(f"{OUTPUT_DIR}/index.html", 'w', encoding='utf-8') as f:
         f.write(pillar_html)
 
     # 5. SEO ASSETS
